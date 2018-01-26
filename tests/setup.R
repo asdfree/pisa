@@ -116,13 +116,4 @@ glm_result <-
 	) )
 	
 summary( glm_result )
-library(dbplyr)
-library(srvyr)
-pisa_srvyr_design <- as_survey( pisa_design )
-pisa_srvyr_design %>%
-	summarize( mean = survey_mean( scie ) )
-
-pisa_srvyr_design %>%
-	group_by( gender ) %>%
-	summarize( mean = survey_mean( scie ) )
 
