@@ -116,6 +116,7 @@ glm_result <-
 	) )
 	
 summary( glm_result )
+library(dbplyr)
 library(srvyr)
 pisa_srvyr_design <- as_survey( pisa_design )
 pisa_srvyr_design %>%
