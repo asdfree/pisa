@@ -106,10 +106,10 @@ MIcombine( with( pisa_design ,
 MIcombine( with( pisa_design ,
 	svymean( ~ scie , deff = "replace" )
 ) )
-lodown:::MIsvyciprop( ~ oecd , pisa_design ,
+MIsvyciprop( ~ oecd , pisa_design ,
 	method = "likelihood" )
-lodown:::MIsvyttest( scie ~ oecd , pisa_design )
-lodown:::MIsvychisq( ~ oecd + how_many_computers_at_home , pisa_design )
+MIsvyttest( scie ~ oecd , pisa_design )
+MIsvychisq( ~ oecd + how_many_computers_at_home , pisa_design )
 glm_result <- 
 	MIcombine( with( pisa_design ,
 		svyglm( scie ~ oecd + how_many_computers_at_home )
