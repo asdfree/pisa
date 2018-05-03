@@ -64,12 +64,17 @@ MIcombine( with( pisa_design , svytotal( ~ how_many_computers_at_home ) ) )
 MIcombine( with( pisa_design ,
 	svyby( ~ how_many_computers_at_home , ~ gender , svytotal )
 ) )
-MIcombine( with( pisa_design , svyquantile( ~ scie , 0.5 , se = TRUE ) ) )
+MIcombine( with( pisa_design ,
+	svyquantile(
+		~ scie ,
+		0.5 , se = TRUE 
+) ) )
 
 MIcombine( with( pisa_design ,
-	svyby( 
-		~ scie , ~ gender , svyquantile , 0.5 ,
-		se = TRUE , keep.var = TRUE , ci = TRUE 
+	svyby(
+		~ scie , ~ gender , svyquantile ,
+		0.5 , se = TRUE ,
+		keep.var = TRUE , ci = TRUE 
 ) ) )
 MIcombine( with( pisa_design ,
 	svyratio( numerator = ~ math , denominator = ~ reading )
